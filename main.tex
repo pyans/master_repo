@@ -1,0 +1,111 @@
+\documentclass[a4j,12pt,twoside]{jreport}
+
+\usepackage{subfiles}
+%\usepackage{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{kit-is-m}
+
+% textlint-disable sentence-length
+
+%% 下のコメントで囲まれた範囲はtextlintによるチェックを無視する
+%% ルール名を省略すると全て無視
+%
+%  % textlint-disable ルール名
+%  文章
+%  % textlint-enable ルール名
+
+% textlint-enable sentence-length
+
+%% Uncomment the following line if you prefer to make the English version cover page.
+%\EngCover{1}
+\author{工繊　太郎}
+%% \eauthor または \eauthori のどちらかを使うこと.
+%% 日本人学生: 名-姓の順で定義する．
+%% International students: Use \eauthori macro ONLY(Comment \eauthor macro out).
+%%                         Write first and last names exactly as shown on 
+%%                         your residence card.
+\eauthor{Taro}{Kousen} % 日本人学生（名-姓の順であることに注意！）
+%\eauthori{John Smith} % for International students
+\idnumber{17622999}
+\deadline{2020}{2}{10} % 提出日{西暦年}{月}{日}
+%% 長いタイトルで途中改行する場合，改行したい位置で
+%% \coverbreak, \abstbreak, \\ のいずれかを使う．
+%%   \coverbreak ：表紙でのみこの位置で改行(line break here in coverpage only)
+%%    \abstbreak ：概要でのみこの位置で改行(line break here in abstract only)
+%%            \\ ：表紙・概要ともにこの位置で改行
+%%【例】
+%% \title{長い長いタイトル\coverbreak の改行位置\abstbreak に関する研究}
+%% \etitle{Very long title\coverbreak long long\abstbreak long title}
+\title{修士論文・卒業研究報告書の書き方}
+\etitle{How to write the Master's Thesis}
+%% 以下，指導教員名の前の数字は職名を表す
+%% 1:教授，2:准教授，3:講師，4:助教，5:助手
+%% The first parameter describes a job classification.
+%% 1:Prof., 2:Assoc.Prof., 3:Lecturer, 4:Assist.Prof., 5: Assist.
+\advisor{1}{工繊　一郎} % 主任指導教員
+\secondadvisor{2}{情報　次郎} % （必要ならば）指導教員(if needed)
+%\thirdadvisor{4}{情報　三郎} % （必要ならば）指導教員(if needed)
+\begin{document}
+\maketitle
+
+%%
+%% 和文概要（400字程度）
+%%
+\subfile{sections/abstract-ja}
+
+% textlint-disable sentence-length
+
+%% 英文概要（150〜200 words）
+%% English Abstract (150-200 words)
+%%
+%% 【注意】
+%% このスタイルファイルが生成する英文概要は，学務課が要求する
+%% 書式と厳密には一致しない．
+%% 学務課へは別途 Word ファイル（Doc形式）の提出が必要なので，
+%% Word 上で最終印刷することを勧める．
+%% Please print out the final edition of the abstract by using MS Word 
+%% for submitting to the Educational Affairs. You also have to submit 
+%% the Word file online.
+
+% textlint-enable sentence-length
+\subfile{sections/abstract-en}
+
+% 目次
+% Index
+\begin{contents}
+\tableofcontents % 目次の作成
+%\nchapter{記号説明} % 必要ならば
+%% ここに記号説明を書く
+\end{contents}
+
+% 緒言
+% Introduction
+\subfile{sections/introduction}
+
+% 論文の体裁
+% Format of thesis
+\subfile{sections/format}
+
+% 論文の構成
+% Chapters
+\subfile{sections/chapters}
+
+% 結言
+% Conclusions
+\subfile{sections/conclusions}
+
+% 謝辞
+% Acknowledgement
+\subfile{sections/acknowledgement}
+
+% 参考文献
+% References
+\bibliographystyle{kit-is} % 文献スタイルファイル
+\bibliography{main} % 文献データベース
+
+% 付録
+% Appendix
+\subfile{sections/appendix}
+
+\end{document}
+
