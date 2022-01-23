@@ -3,25 +3,25 @@
 
 \begin{document}
 
-\chapter{論文の構成}
+\chapter{プログラム構成}
 
-\section{表紙・裏表紙}
-表紙には図~\ref{fig1} に示す内容を中央揃えで書く．
-受領印が押されるので誤字脱字がないよう万全を期す．
-裏表紙には何も印刷しない．
+\section{環境、使用言語}
+本研究はvisual studio code(以下vscode)の拡張機能として実装する．
+% この理由は（ここに理由を入力）だからである．
+vscodeの拡張機能実装では言語としてtypescriptを用い、
+またjavascriptのAPIであるvscode APIが用意されている．
+ディレクトリ構成を以下に示す．
 
-\begin{figure}[p] % 図は必ず[p]で取り込むこと
-\begin{center}
-    \includegraphics[scale=1.0]{figures/coverpage.eps}
-\caption{修士論文・卒業研究報告書の表紙の例}
-\label{fig1} % \label は \caption の直後に付ける
-\end{center}
-\end{figure}
+\section{次}
 
-\section{和文概要}
-概要は，背景，目的，方法，結果，結論を簡潔明快に1ページ以内で記述する．
-本文中に説明のある特定の記号，数式，図表などを引用しない．
-図表は含めない．
+\section{アルゴリズム}
+本プログラムの動作としては主に3つの段階に分けて考えることができる。
+すなわち、現在のソースコードを抽象構文木化し、jsonファイルに変換して内容を取り込む入力部分、
+抽象構文木化したソースコード群を比較評価し、現在のカーソル部分と類似した部分木を見つけ出す比較部分、
+見つけた部分木から対応するヒントコードを表示する出力部分である。
+
+\section{}
+
 
 % textlint-disable no-doubled-joshi,sentence-length
 卒業研究報告書では，1行目に[研究題目]，3行目に
